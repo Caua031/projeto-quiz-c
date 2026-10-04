@@ -39,13 +39,39 @@ void novapergunta(){
     printf("Pergunta salva com sucesso!\n");
 
 }
+//Consulta por Curso - Henrick
+void consultaPorCurso(){
+    char curso[4];
+    Perguntas r;
+    FILE * arquivo;
+    arquivo = fopen(ARQUIVO, "r");
+    if (arquivo == NULL){ 
+        perror("Erro ao abrir o arquivo"); /*Aula 8 exemplo 4*/
+        return;
+    }
 
+    char linha[100];
+    printf("Digite o curso: ");
+    scanf(" %3[^\n]", curso);
+    while (fgets(linha, 100, arquivo) != NULL){
+        r.id = atoi(strtok(linha, ";")); //Explicar depois!!!!!!!!!!!!!
+        strcpy(r.texto, strtok(NULL, ";"));
+        strcpy(r.categoria, strtok(NULL, ";"));
+        strcpy(r.curso, strtok(NULL, ";"));
+        strcpy(r.resposta, strtok(NULL, ";"));
 
-int main(){
-    novapergunta();
-
-    return 0;
-};
+        if (strcmp(curso, r.curso)== 0){
+        printf("ID: %d\n", r.id);
+        printf("Pergunta: %s\n", r.texto);
+        printf("Categoria: %s\n", r.categoria);
+        printf("Curso: %s\n", r.curso);
+        printf("Resposta: %s\n", r.resposta);
+    
+    ;
+        }
+    }
+    fclose(arquivo);
+}
 
 //Atualização de pergunta - Raphael
 void excluirpergunta(){
@@ -99,13 +125,6 @@ void excluirpergunta(){
     }
     fclose(arquivo);
     printf("Pergunta excluida com sucesso!\n");
-}
-
-
-int main(){
-    excluirpergunta();
-
-    return 0;
 }
 
 //Exclusão de pergunta - Raphael
