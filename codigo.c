@@ -74,58 +74,6 @@ void consultaPorCurso(){
 }
 
 //Atualização de pergunta - Raphael
-void excluirpergunta(){
-    Perguntas lista[TAM];
-    FILE * arquivo;
-    char linha[400];
-    int total = 0;
-    int i;
-    int id;
-    int posicao = -1;
-
-    arquivo = fopen(ARQUIVO, "r");
-    if (arquivo == NULL){
-        perror("Erro ao abrir o arquivo");
-        return;
-    }
-    while (total < TAM && fgets(linha, sizeof(linha), arquivo) != NULL){
-        if (sscanf(linha, "%d;%249[^;];%49[^;];%9[^;];%3[^\n]",
-                   &lista[total].id, lista[total].texto, lista[total].categoria,
-                   lista[total].curso, lista[total].resposta) == 5){
-            total++;
-        }
-    }
-    fclose(arquivo);
-
-    printf("Digite o ID da pergunta que deseja excluir: ");
-    scanf("%d", &id);
-    for (i = 0; i < total; i++){
-        if (lista[i].id == id){
-            posicao = i;
-        }
-    }
-    if (posicao == -1){
-        printf("Pergunta nao encontrada!\n");
-        return;
-    }
-
-    for (i = posicao; i < total - 1; i++){
-        lista[i] = lista[i + 1];
-    }
-    total--;
-
-    arquivo = fopen(ARQUIVO, "w");
-    if (arquivo == NULL){
-        perror("Erro ao abrir o arquivo");
-        return;
-    }
-    for (i = 0; i < total; i++){
-        fprintf(arquivo, "%d;%s;%s;%s;%s\n", lista[i].id, lista[i].texto,
-                lista[i].categoria, lista[i].curso, lista[i].resposta);
-    }
-    fclose(arquivo);
-    printf("Pergunta excluida com sucesso!\n");
-}
 
 //Exclusão de pergunta - Raphael
 void excluirpergunta(){
