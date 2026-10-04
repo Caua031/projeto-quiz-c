@@ -1,0 +1,30 @@
+1;Voce gosta de resolver problemas de logica?;Raciocinio;CC;SIM
+2;Voce se interessa por entender como os computadores funcionam?;Interesse;CC;SIM
+3;Voce gosta de matematica e de encontrar padroes?;Raciocinio;CC;SIM
+4;Voce teria interesse em aprender como algoritmos funcionam?;Algoritmos;CC;SIM
+5;Voce gosta de explorar como dados podem ser usados para resolver problemas?;Dados;CC;SIM
+6;Voce prefere atividades com pouca programacao?;Interesse;CC;NAO
+7;Voce gosta de pensar em diferentes formas de resolver um mesmo problema?;Raciocinio;CC;SIM
+8;Voce se interessa por inteligencia artificial?;Tecnologia;CC;SIM
+9;Voce gosta de estudar conceitos teoricos antes de aplica-los?;Aprendizagem;CC;SIM
+10;Voce prefere trabalhar apenas com tarefas prontas e sem explorar novas solucoes?;Interesse;CC;NAO
+11;Voce gosta de planejar sistemas antes de comecar a desenvolve-los?;Projetos;ES;SIM
+12;Voce se interessa por organizar grandes projetos de software?;Projetos;ES;SIM
+13;Voce gosta de pensar em como diferentes partes de um sistema podem trabalhar juntas?;Arquitetura;ES;SIM
+14;Voce teria interesse em aprender sobre testes de software?;Qualidade;ES;SIM
+15;Voce gosta de identificar problemas e pensar em como evita-los durante um projeto?;Qualidade;ES;SIM
+16;Voce prefere comecar a programar sem planejar as etapas do projeto?;Projetos;ES;NAO
+17;Voce se interessa por documentar sistemas e suas funcionalidades?;Documentacao;ES;SIM
+18;Voce gosta de trabalhar em equipe durante o desenvolvimento de projetos?;Equipe;ES;SIM
+19;Voce teria interesse em acompanhar um projeto desde o planejamento ate a entrega?;Projetos;ES;SIM
+20;Voce prefere desenvolver projetos sem se preocupar com testes?;Qualidade;ES;NAO
+21;Voce prefere aprender criando aplicacoes praticas?;Aprendizagem;ADS;SIM
+22;Voce gosta de desenvolver solucoes para necessidades do dia a dia?;Aplicacoes;ADS;SIM
+23;Voce se interessa por sistemas usados por empresas?;Sistemas;ADS;SIM
+24;Voce gosta de aprender uma tecnologia e utiliza-la em um projeto?;Aprendizagem;ADS;SIM
+25;Voce teria interesse em trabalhar com desenvolvimento de sistemas?;Carreira;ADS;SIM
+26;Voce prefere atividades praticas em vez de estudar muitos conceitos teoricos?;Aprendizagem;ADS;SIM
+27;Voce gosta de descobrir como melhorar um sistema que ja existe?;Melhoria;ADS;SIM
+28;Voce se interessa por criar ferramentas para facilitar tarefas?;Aplicacoes;ADS;SIM
+29;Voce prefere trabalhar somente com teoria e pouca aplicacao pratica?;Aprendizagem;ADS;NAO
+30;Voce gostaria de transformar uma necessidade de uma empresa em uma solucao de software?;Solucoes;ADS;SIM
