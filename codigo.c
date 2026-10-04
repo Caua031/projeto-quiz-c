@@ -236,3 +236,87 @@ int main(){
 
     return 0;
 }
+
+//Atualizar pergunta - Raphael
+void atualizarpergunta(){
+    Perguntas lista[TAM];
+    FILE * arquivo;
+    char linha[400];
+    int total = 0;
+    int i;
+    int id;
+    int posicao = -1;
+
+    arquivo = fopen(ARQUIVO, "r");
+    if (arquivo == NULL){
+        perror("Erro ao abrir o arquivo");
+        return;
+    }
+    while (total < TAM && fgets(linha, sizeof(linha), arquivo) != NULL){
+        if (sscanf(linha, "%d;%249[^;];%49[^;];%9[^;];%3[^\n]",
+                   &lista[total].id, lista[total].texto, lista[total].categoria,
+                   lista[total].curso, lista[total].resposta) == 5){
+            total++;
+        }
+    }
+    fclose(arquivo);
+
+    printf("Digite o ID da pergunta que deseja atualizar: ");
+    scanf("%d", &id);
+    for (i = 0; i < total; i++){
+        if (lista[i].id == id){
+            posicao = i;
+        }
+    }
+    if (posicao == -1){
+        printf("Pergunta nao encontrada!\n");
+        return;
+    }
+
+    printf("Pergunta atual: %s\n", lista[posicao].texto);
+    printf("Digite a nova pergunta: ");
+    scanf(" %249[^\n]", lista[posicao].texto);
+
+    printf("Categorias validas\nAlgoritmo\nDados\nTecnologia\nAprendizagem\nSistema\n");
+    printf("Digite a nova categoria: ");
+    scanf(" %49[^\n]", lista[posicao].categoria);
+    if (strcmp(lista[posicao].categoria, "Algoritmo") != 0 &&
+        strcmp(lista[posicao].categoria, "Dados") != 0 &&
+        strcmp(lista[posicao].categoria, "Tecnologia") != 0 &&
+        strcmp(lista[posicao].categoria, "Aprendizagem") != 0 &&
+        strcmp(lista[posicao].categoria, "Sistema") != 0){
+        printf("Categoria invalida! Nada foi alterado.\n");
+        return;
+    }
+
+    printf("Cursos validos\nCC\nADS\nES\n");
+    printf("Digite o novo curso: ");
+    scanf(" %9[^\n]", lista[posicao].curso);
+    if (strcmp(lista[posicao].curso, "CC") != 0 &&
+        strcmp(lista[posicao].curso, "ADS") != 0 &&
+        strcmp(lista[posicao].curso, "ES") != 0){
+        printf("Curso invalido! Nada foi alterado.\n");
+        return;
+    }
+
+    printf("Respostas validas - SIM/NAO\n");
+    printf("Digite a nova resposta: ");
+    scanf(" %3[^\n]", lista[posicao].resposta);
+    if (strcmp(lista[posicao].resposta, "SIM") != 0 &&
+        strcmp(lista[posicao].resposta, "NAO") != 0){
+        printf("Resposta invalida! Nada foi alterado.\n");
+        return;
+    }
+
+    arquivo = fopen(ARQUIVO, "w");
+    if (arquivo == NULL){
+        perror("Erro ao abrir o arquivo");
+        return;
+    }
+    for (i = 0; i < total; i++){
+        fprintf(arquivo, "%d;%s;%s;%s;%s\n", lista[i].id, lista[i].texto,
+                lista[i].categoria, lista[i].curso, lista[i].resposta);
+    }
+    fclose(arquivo);
+    printf("Pergunta atualizada com sucesso!\n");
+}
