@@ -13,6 +13,8 @@ typedef struct{
     char resposta[4];
 }Perguntas;
 
+
+//Cadastro de nova pergunta - Henrick
 void novapergunta(){
     Perguntas a;
     FILE * arquivo;
@@ -45,23 +47,7 @@ int main(){
     return 0;
 };
 
-/*Atualizar*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define ARQUIVO "Perguntas.csv"
-#define TAM 100
-
-typedef struct{
-    int id;
-    char texto[250];
-    char categoria[50];
-    char curso[10];
-    char resposta[4];
-}Perguntas;
-
+//Atualização de pergunta - Raphael
 void excluirpergunta(){
     Perguntas lista[TAM];
     FILE * arquivo;
@@ -122,23 +108,7 @@ int main(){
     return 0;
 }
 
-/*Excluir*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define ARQUIVO "Perguntas.csv"
-#define TAM 100
-
-typedef struct{
-    int id;
-    char texto[250];
-    char categoria[50];
-    char curso[10];
-    char resposta[4];
-}Perguntas;
-
+//Exclusão de pergunta - Raphael
 void excluirpergunta(){
     Perguntas lista[TAM];
     FILE * arquivo;
