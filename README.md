@@ -77,53 +77,6 @@ ID;Pergunta;Categoria;Curso;Resposta
 - **Arquivo CSV** para armazenamento dos dados
 - **Terminal/Prompt de Comando** para execução
 
-## Como executar
-
-### 1. Clonar ou baixar o projeto
-
-Caso o projeto esteja em um repositório Git:
-
-```bash
-git clone URL_DO_REPOSITORIO
-cd projeto-quiz-c-main
-```
-
-Também é possível apenas baixar os arquivos do projeto e abrir a pasta no computador.
-
-### 2. Conferir o arquivo de perguntas
-
-O código-fonte está configurado para abrir o arquivo:
-
-```c
-#define ARQUIVO "Perguntas_2.csv"
-```
-
-Por isso, o arquivo de dados deve estar na mesma pasta do executável e possuir exatamente esse nome.
-
-> **Atenção:** no projeto enviado, o arquivo está nomeado como `Perguntas.csv`. Para executar o código sem alterar o código-fonte, renomeie esse arquivo para `Perguntas_2.csv`.
-
-### 3. Compilar
-
-Com o GCC instalado, no terminal execute:
-
-```bash
-gcc codigo.c -o quiz.exe
-```
-
-### 4. Executar
-
-No Windows:
-
-```bash
-quiz.exe
-```
-
-Ou, no PowerShell:
-
-```powershell
-.\quiz.exe
-```
-
 ## Como utilizar
 
 Ao iniciar o programa, será apresentado um menu semelhante a:
@@ -191,8 +144,6 @@ projeto-quiz-c-main/
 ├── Perguntas.csv
 └── README.md
 ```
-
-> Lembre-se de renomear `Perguntas.csv` para `Perguntas_2.csv` ou ajustar a constante `ARQUIVO` no código-fonte antes de executar.
 
 ## Conceitos de programação utilizados
 
