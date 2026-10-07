@@ -1,87 +1,89 @@
-# Gerenciador de Quiz em C
+# 🎓 Gerenciador de Quiz Vocacional (C)
 
-Projeto desenvolvido em linguagem C para a disciplina da faculdade, com o objetivo de criar um sistema de gerenciamento de perguntas de um quiz por meio de um menu interativo no terminal.
+Projeto da **Aula 08** (manipulação de arquivos em C): um sistema de console para **gerenciar o banco de perguntas** de um quiz que ajuda o aluno a descobrir com qual curso de tecnologia ele mais se identifica: **CC**, **ES** ou **ADS**.
 
-O programa permite cadastrar, listar, consultar, atualizar e excluir perguntas armazenadas em um arquivo CSV.
+As perguntas ficam salvas em um arquivo `.csv`, e o programa permite cadastrar, listar, consultar, atualizar e excluir perguntas direto pelo terminal.
 
-## Objetivo do projeto
+---
 
-O projeto foi desenvolvido para praticar conceitos fundamentais da linguagem C e de manipulação de arquivos, estruturas e dados. Entre os principais conceitos utilizados estão:
+## 🎥 Vídeo de apresentação
 
-- `struct` para organizar os dados das perguntas;
-- funções para separar as diferentes operações do sistema;
-- manipulação de arquivos com `fopen`, `fgets` e `fprintf`;
-- leitura e tratamento de strings;
-- uso de `strtok` para separar os campos do arquivo;
-- conversão de texto para número com `atoi`;
-- estruturas de repetição e decisão;
-- validação das informações digitadas pelo usuário.
+▶️ **[ASSISTIR AO VÍDEO](https://www.youtube.com/watch?v=k69ByjOWsPU)**
 
-## Funcionalidades
+---
 
-O sistema possui as seguintes opções:
+## 👥 Integrantes
 
-| Opção | Funcionalidade | Descrição |
-|---|---|---|
-| 1 | Cadastrar pergunta | Adiciona uma nova pergunta ao arquivo de dados. |
-| 2 | Listar perguntas | Exibe todas as perguntas cadastradas. |
-| 3 | Consultar por categoria | Filtra as perguntas de acordo com a categoria informada. |
-| 4 | Consultar por curso | Filtra as perguntas de acordo com o curso informado. |
-| 5 | Deletar pergunta | Remove uma pergunta utilizando seu ID. |
-| 6 | Atualizar pergunta | Altera os dados de uma pergunta existente. |
-| 0 | Sair | Encerra o programa. |
+| Integrante | Funcionalidades desenvolvidas |
+|---|---|
+| **Cauã Diego** | Listar perguntas · Consultar por categoria |
+| **Hnerick** | Cadastrar pergunta · Consultar por curso |
+| **Raphael** | Atualizar pergunta · Excluir pergunta |
 
-## Estrutura dos dados
+> Disciplina: **NOME DA DISCIPLINA** · Professora: **NOME DA PROFESSORA** · Curso/Turma: **CURSO / TURMA**
 
-As informações de cada pergunta são armazenadas por meio da `struct Perguntas`:
+---
 
-```c
-typedef struct{
-    int id;
-    char texto[250];
-    char categoria[50];
-    char curso[10];
-    char resposta[4];
-} Perguntas;
+## ✨ Funcionalidades
+
+| Opção | Função | O que faz |
+|:---:|---|---|
+| 1 | `cadastrarpergunta()` | Adiciona uma nova pergunta ao final do arquivo, validando categoria, curso e resposta |
+| 2 | `listarPerguntas()` | Exibe todas as perguntas cadastradas |
+| 3 | `consultarPorCategoria()` | Mostra apenas as perguntas de uma categoria |
+| 4 | `consultaPorCurso()` | Mostra apenas as perguntas de um curso |
+| 5 | `excluirpergunta()` | Remove uma pergunta a partir do ID |
+| 6 | `atualizarpergunta()` | Altera texto, categoria, curso e resposta de uma pergunta a partir do ID |
+| 0 | — | Encerra o programa |
+
+---
+
+## 🗂️ Estrutura do projeto
+
+```
+projeto-quiz-c/
+├── codigo.c        # código-fonte do programa
+├── Perguntas.csv   # banco de dados com 30 perguntas (10 por curso)
+└── README.md       # este arquivo
 ```
 
-Cada registro possui:
+---
 
-- **ID:** identificador da pergunta;
-- **Texto:** pergunta apresentada ao usuário;
-- **Categoria:** classificação da pergunta;
-- **Curso:** curso relacionado à pergunta;
-- **Resposta:** resposta esperada (`SIM` ou `NAO`).
+## 📄 Formato dos dados
 
-## Formato do arquivo
+Cada linha do `Perguntas.csv` é uma pergunta, com os campos separados por **ponto e vírgula (`;`)**:
 
-Os dados são armazenados em um arquivo CSV utilizando `;` como separador entre os campos.
+```
+id;texto;categoria;curso;resposta
+```
 
 Exemplo:
 
-```text
+```
 1;Voce gosta de resolver problemas de logica?;Raciocinio;CC;SIM
-2;Voce se interessa por entender como os computadores funcionam?;Interesse;CC;SIM
 ```
 
-A ordem dos campos é:
+| Campo | Descrição |
+|---|---|
+| `id` | Número inteiro que identifica a pergunta |
+| `texto` | Enunciado da pergunta (até 249 caracteres) |
+| `categoria` | Tema da pergunta |
+| `curso` | Curso ao qual a pergunta se relaciona: `CC`, `ES` ou `ADS` |
+| `resposta` | Resposta que indica afinidade com o curso: `SIM` ou `NAO` |
 
-```text
-ID;Pergunta;Categoria;Curso;Resposta
+### Valores aceitos ao cadastrar, atualizar ou consultar
+
+- **Categorias:** `Algoritmo`, `Dados`, `Tecnologia`, `Aprendizagem`, `Sistema`
+- **Cursos:** `CC`, `ADS`, `ES`
+- **Respostas:** `SIM`, `NAO`
+
+A comparação não diferencia maiúsculas de minúsculas (`dados` = `Dados`). Se o valor for inválido, a operação é cancelada.
+
+---
+
+## 🖥️ Exemplo de uso
+
 ```
-
-## Tecnologias utilizadas
-
-- **C**
-- **GCC** ou outro compilador compatível com C
-- **Arquivo CSV** para armazenamento dos dados
-- **Terminal/Prompt de Comando** para execução
-
-## Como utilizar
-
-Ao iniciar o programa, será apresentado um menu semelhante a:
-
-```text
 -------Gerenciador de QUIZ-------
 
 1 - Cadastrar pergunta
@@ -91,91 +93,24 @@ Ao iniciar o programa, será apresentado um menu semelhante a:
 5 - Deletar pergunta
 6 - Atualizar pergunta
 0 - Sair
-
-Entre com a opcao desejada:
+Entre com a opcao desejada: 2
+----------------------------------------
+ID: 1
+Pergunta: Voce gosta de resolver problemas de logica?
+Categoria: Raciocinio
+Curso: CC
+Resposta: SIM
 ```
 
-Basta informar o número da opção desejada e seguir as instruções exibidas no terminal.
+---
 
-### Exemplo de cadastro
+## 📚 Conceitos aplicados (Aula 08)
 
-Ao escolher a opção `1`, o sistema solicita:
+- **Manipulação de arquivos:** `fopen` (modos `"r"`, `"a"` e `"w"`), `fclose`, `fgets` e `fprintf`
+- **Tratamento de erros:** `perror` quando o arquivo não pode ser aberto
+- **Processamento de texto:** `strtok`, `sscanf`, `atoi`, `strcpy` e `strcasecmp`
+- **Estruturas (`struct`):** o tipo `Perguntas` agrupa os dados de cada pergunta
+- **Modularização:** uma função para cada operação, chamadas por um menu com `switch`
+- **Validação de entrada:** categoria, curso e resposta são conferidos antes de salvar
 
-```text
-Digite o ID: 31
-Digite a pergunta: Voce gosta de programar em C?
-Digite a categoria: Tecnologia
-Digite o curso: CC
-Digite a resposta: SIM
-```
-
-Após validar os dados, a pergunta é adicionada ao arquivo.
-
-## Validações
-
-O sistema possui algumas validações para evitar registros fora do padrão definido pelo projeto.
-
-### Categorias aceitas
-
-- Algoritmo
-- Dados
-- Tecnologia
-- Aprendizagem
-- Sistema
-
-### Cursos aceitos
-
-- CC
-- ADS
-- ES
-
-### Respostas aceitas
-
-- SIM
-- NAO
-
-Caso seja informado um valor inválido, a operação é interrompida e uma mensagem de erro é apresentada.
-
-## Organização do projeto
-
-```text
-projeto-quiz-c-main/
-├── codigo.c
-├── Perguntas.csv
-└── README.md
-```
-
-## Conceitos de programação utilizados
-
-O projeto reúne diversos conceitos estudados em programação em C, como:
-
-**Estruturas (`struct`)**  
-Utilizadas para representar uma pergunta com diferentes tipos de informação.
-
-**Funções**  
-Cada operação do sistema foi separada em uma função, como `cadastrarpergunta`, `listarPerguntas`, `consultarPorCategoria`, `consultaPorCurso`, `excluirpergunta` e `atualizarpergunta`.
-
-**Manipulação de arquivos**  
-Os dados são gravados e lidos de um arquivo utilizando funções da biblioteca `stdio.h`.
-
-**Strings**  
-A biblioteca `string.h` é utilizada para copiar e comparar textos, além de dividir os campos das linhas do arquivo.
-
-**Estruturas de repetição**  
-O sistema utiliza laços como `while`, `for` e `do...while` para percorrer registros e manter o menu funcionando até que o usuário escolha sair.
-
-**Estruturas condicionais**  
-São utilizadas instruções `if` e `switch` para realizar validações e direcionar as opções escolhidas no menu.
-
-## Autores
-
-Projeto acadêmico desenvolvido por:
-
-- Cauã Diego
-- Henrique
-- Raphael
-
-- ## Vídeo do projeto
-
-[▶️ Assistir ao vídeo de apresentação]([https://youtu.be/k69ByjOWsPU?si=xnRV_1avD7DX46Qk])
-
+---
