@@ -1,4 +1,4 @@
-# 🎓 Gerenciador de Quiz Vocacional (C)
+# 🎓 Gerenciador de Quiz (C)
 
 Projeto da **Aula 08** (manipulação de arquivos em C): um sistema de console para **gerenciar o banco de perguntas** de um quiz que ajuda o aluno a descobrir com qual curso de tecnologia ele mais se identifica: **CC**, **ES** ou **ADS**.
 
