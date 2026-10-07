@@ -221,9 +221,10 @@ São utilizadas instruções `if` e `switch` para realizar validações e direci
 Projeto acadêmico desenvolvido por:
 
 - Cauã Diego
-- Hnerick
+- Henrique
 - Raphael
 
-## Observação
+- ## Vídeo do projeto
 
-Este projeto possui finalidade acadêmica e foi desenvolvido para praticar programação em C, especialmente estruturas, funções, manipulação de strings e arquivos.
+[▶️ Assistir ao vídeo de apresentação]([COLE_AQUI_O_LINK_DO_VIDEO](https://youtu.be/k69ByjOWsPU?si=xnRV_1avD7DX46Qk))
+
