@@ -177,5 +177,5 @@ Projeto acadêmico desenvolvido por:
 
 - ## Vídeo do projeto
 
-[▶️ Assistir ao vídeo de apresentação]([COLE_AQUI_O_LINK_DO_VIDEO](https://youtu.be/k69ByjOWsPU?si=xnRV_1avD7DX46Qk))
+[▶️ Assistir ao vídeo de apresentação]([https://youtu.be/k69ByjOWsPU?si=xnRV_1avD7DX46Qk])
 
