@@ -17,7 +17,7 @@ As perguntas ficam salvas em um arquivo `.csv`, e o programa permite cadastrar, 
 | Integrante | Funcionalidades desenvolvidas |
 |---|---|
 | **Cauã Diego** | Listar perguntas · Consultar por categoria |
-| **Hnerick** | Cadastrar pergunta · Consultar por curso |
+| **Henrick** | Cadastrar pergunta · Consultar por curso |
 | **Raphael** | Atualizar pergunta · Excluir pergunta |
 
 > Disciplina: **Algoritmos e Pensamento Computacional** · Professora: **Andrea Ono Sakai** · Curso/Turma: **CIÊNCIA DA COMPUTAÇÃO / GRUPO: 12**
