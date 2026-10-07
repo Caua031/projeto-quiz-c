@@ -20,7 +20,7 @@ As perguntas ficam salvas em um arquivo `.csv`, e o programa permite cadastrar, 
 | **Hnerick** | Cadastrar pergunta · Consultar por curso |
 | **Raphael** | Atualizar pergunta · Excluir pergunta |
 
-> Disciplina: **NOME DA DISCIPLINA** · Professora: **NOME DA PROFESSORA** · Curso/Turma: **CURSO / TURMA**
+> Disciplina: **Algoritmos e Pensamento Computacional** · Professora: **Andrea Ono Sakai** · Curso/Turma: **CIÊNCIA DA COMPUTAÇÃO / GRUPO: 12**
 
 ---
 
